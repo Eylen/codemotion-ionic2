@@ -1,0 +1,4 @@
+<ion-tabs [selectedIndex]="tabSelectedIndex">
+  <ion-tab *ngFor="let tab of tabs" [root]="tab.root" [tabTitle]="tab.title" [tabIcon]="tab.icon" 
+      [rootParams]="tabSelectedIndex"></ion-tab>
+</ion-tabs>

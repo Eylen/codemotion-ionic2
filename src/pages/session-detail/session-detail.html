@@ -1,0 +1,63 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{slot.title}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card>
+    <ion-item>
+      <h2>{{slot.title}}</h2>
+      <p>{{slot.start}} - {{slot.end}}
+    </ion-item>
+    <ion-card-content>
+      <p>{{slot.description}}</p>
+      <ion-row>
+        <ion-col>
+          <button *ngFor="let tag of slot.contentType">
+            <div>{{tag}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button *ngFor="let tag of slot.language">
+            <div>{{tag}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button *ngFor="let tag of slot.talkLanguage">
+            <div>{{tag}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button *ngFor="let tag of slot.technology">
+            <div>{{tag}}</div>
+          </button>
+        </ion-col>
+        <ion-col>
+          <button *ngFor="let tag of slot.level">
+            <div>{{tag}}</div>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngFor="let author of slot.authors">
+    <ion-item>
+      <ion-avatar item-left>
+        <img [src]="author.avatar"/>
+      </ion-avatar>
+      <h2>{{author.name}}</h2>
+    </ion-item>
+    
+    <ion-card-content>
+      <p>
+        {{author.description}}
+      </p>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
